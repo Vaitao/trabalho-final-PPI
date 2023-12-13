@@ -13,9 +13,9 @@ app.use(session({
     maxAge: 1000 * 60 * 30
   }
 }))
-app.get("/sair", sair);
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(process.cwd(), "src")));
+app.use(express.static(path.join(process.cwd(), "telas")));
+app.get("/sair", sair);
 function autenticar(req, res, next) {
   if (req.session.usuarioAutenticado) {
     next();
